@@ -8,11 +8,11 @@ namespace UniversityAutomatization.MVVM.Models
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [ForeignKey(nameof(Teacher))] public int TeacherId { get; set; }
-        [Required] public int HoursCount { get; set; }
-        [ForeignKey(nameof(Student))] public int StudentId { get; set; }
-        [ForeignKey(nameof(Lesson))] public int LessonId { get; set; }
-        [ForeignKey(nameof(StatusOfWork))] public int IdResult { get; set; }
+        [ForeignKey(nameof(Teacher))] public int? TeacherId { get; set; }
+        [Required] public int? HoursCount { get; set; }
+        [ForeignKey(nameof(Student))] public int? StudentId { get; set; }
+        [ForeignKey(nameof(Lesson))] public int? LessonId { get; set; }
+        [ForeignKey(nameof(StatusOfWork))] public int? IdResult { get; set; }
         
         [InverseProperty("Exams")] public Teacher Teacher { get; set; } // many - 1
         [InverseProperty("Exams")] public Student Student { get; set; } // many - 1

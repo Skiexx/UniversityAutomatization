@@ -10,13 +10,13 @@ namespace UniversityAutomatization.MVVM.Models
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Required] public string FirstName { get; set; }
-        [Required] public string LastName { get; set; }
-        [Required] public string MiddleName { get; set; }
-        [Required, Column(TypeName = "DATA")] public DateTime DateOfBirth { get; set; }
-        [Required] public int GroupNumber { get; set; }
-        [Required] public string PhoneNumber { get; set; }
-        [NotMapped] public string FullName => $"{LastName} {FirstName} {MiddleName}";
+        [Required] public string? FirstName { get; set; }
+        [Required] public string? LastName { get; set; }
+        [Required] public string? MiddleName { get; set; }
+        [Required, Column(TypeName = "DATE")] public DateTime? DateOfBirth { get; set; }
+        [Required] public string? GroupNumber { get; set; }
+        [Required] public string? PhoneNumber { get; set; }
+        [NotMapped] public string? FullName => $"{LastName} {FirstName} {MiddleName}";
         
         [InverseProperty("Student")] public ICollection<Exam> Exams { get; set; } // 1 - many
         [InverseProperty("Student")] public DiplomaWork DiplomaWork { get; set; } // 1 - 1
